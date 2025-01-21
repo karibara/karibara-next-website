@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Comfortaa } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/_components/Navbar";
 
 const comfortaa = Comfortaa({
-  variable: "--font-geist-sans",
+  variable: "--font-comfortaa-sans",
   subsets: ["latin"],
 });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body
         className={`${comfortaa.variable} ${comfortaa.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
