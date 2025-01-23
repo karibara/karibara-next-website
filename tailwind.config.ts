@@ -11,6 +11,11 @@ export default {
   theme: {
     extend: {
       colors: {
+        yellowKari: "hsl(43, 100%, 84%)",
+        wineKari: "hsl(10, 29%, 44%)",
+        roseKari: "hsl(11, 66%, 63%)",
+        peachKari: "hsl(29, 98%, 83%)",
+        mintKari: "hsl(140, 10%, 46%)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
