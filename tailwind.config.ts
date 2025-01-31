@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
+import * as tailwindcssMotion from "tailwindcss-motion";
 
+/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
   content: [
@@ -17,6 +19,7 @@ export default {
         roseKari: "hsl(11, 66%, 63%)",
         peachKari: "hsl(29, 98%, 83%)",
         mintKari: "hsl(140, 10%, 46%)",
+        magentaKari: "hsl(350, 66%, 63%)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -65,5 +68,5 @@ export default {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, tailwindcssMotion],
 } satisfies Config;
