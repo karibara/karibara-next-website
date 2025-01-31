@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Comfortaa } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/_components/Navbar";
+import { Navbar } from "@/components/ui/Navbar";
 
 const comfortaa = Comfortaa({
   variable: "--font-comfortaa-sans",
@@ -23,7 +23,9 @@ export default function RootLayout({
       <body
         className={`${comfortaa.variable} ${comfortaa.variable} antialiased font-[family-name:var(--font-comfortaa-sans)] bg-yellowKari text-wineKari`}
       >
-        <Navbar />
+        <header>
+          <Navbar />
+        </header>
         {children}
       </body>
     </html>
