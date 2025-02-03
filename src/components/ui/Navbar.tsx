@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 type NavlinkProps = {
   href: string;
@@ -15,6 +16,7 @@ type HamburgerProps = {
 type MobileMenuProps = {
   isOpen: boolean;
   onClose: VoidFunction;
+  className?: string;
 };
 
 const Navlink: React.FC<React.PropsWithChildren<NavlinkProps>> = ({
@@ -89,18 +91,28 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   }
 
   return (
-    <nav className="flex w-full flex-col place-content-center gap-4 backdrop-blur-md bg-peachKari/20 lg:hidden fixed h-dvh z-40">
-      {links.map((link) => (
-        <Link
-          onClick={onClose}
-          className="flex place-content-center py-2 "
-          href={link.href}
-          key={link.label}
+    <AnimatePresence>
+      {isOpen && (
+        <motion.nav
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.35 }}
+          className="flex w-full flex-col place-content-center gap-4 backdrop-blur-md bg-peachKari/20 lg:hidden fixed h-dvh z-40"
         >
-          {link.label}
-        </Link>
-      ))}
-    </nav>
+          {links.map((link) => (
+            <Link
+              onClick={onClose}
+              className="flex place-content-center py-2"
+              href={link.href}
+              key={link.label}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </motion.nav>
+      )}
+    </AnimatePresence>
   );
 };
 
