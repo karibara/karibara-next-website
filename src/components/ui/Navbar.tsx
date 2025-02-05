@@ -4,15 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { AnimatedHamburgerButton } from "./AnimatedHamburgerButton";
 
 type NavlinkProps = {
   href: string;
   className?: string;
 };
-type HamburgerProps = {
-  onClick: VoidFunction;
-  className?: string;
-};
+
 type MobileMenuProps = {
   isOpen: boolean;
   onClose: VoidFunction;
@@ -29,41 +27,6 @@ const Navlink: React.FC<React.PropsWithChildren<NavlinkProps>> = ({
   >
     {children}
   </Link>
-);
-
-const Hamburger: React.FC<HamburgerProps> = ({ onClick, className }) => (
-  <button onClick={onClick} aria-label="Menu" className={className}>
-    <svg
-      className="lg:hidden items-center"
-      width="20"
-      height="16"
-      viewBox="0 0 20 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M1.97485 1.97502H17.9749"
-        stroke="#333333"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M1.97485 7.97502H17.9749"
-        stroke="#333333"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M1.97485 13.975H17.9749"
-        stroke="#333333"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </button>
 );
 
 const links = [
@@ -94,11 +57,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.nav
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.35 }}
-          className="flex w-full flex-col place-content-center gap-4 backdrop-blur-md bg-peachKari/20 lg:hidden fixed h-dvh z-40"
+          initial={{ y: -850 }}
+          animate={{ y: 0 }}
+          exit={{ y: -850 }}
+          transition={{ duration: 3, type: "spring" }}
+          className="flex w-full flex-col place-content-center gap-4 backdrop-blur-md bg-peachKari/20 lg:hidden fixed h-3/4 rounded-b-xl border-black z-40"
         >
           {links.map((link) => (
             <Link
@@ -139,9 +102,10 @@ export const Navbar: React.FC = () => {
                 </Navlink>
               ))}
             </nav>
-            <Hamburger
+
+            <AnimatedHamburgerButton
               onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
-              className="mt-4"
+              className="mt-2"
             />
           </div>
         </div>
