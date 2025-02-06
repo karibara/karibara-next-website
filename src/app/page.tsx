@@ -17,7 +17,7 @@ export default function Home() {
               damping: 60, // kontroluje "dochamowanie" pod koniec
               duration: 6, // opcjonalnie, dla większej kontroli
             }}
-            className="text-3xl font-bold pb-4 "
+            className="text-3xl lg:text-5xl font-bold pb-4 "
           >
             Hi, I&apos;m Małgorzata.
           </motion.h1>
@@ -32,6 +32,7 @@ export default function Home() {
               duration: 8,
               delay: 1,
             }}
+            className="lg:text-2xl"
           >
             Nice to meet you.
           </motion.h2>
@@ -45,6 +46,7 @@ export default function Home() {
               duration: 12,
               delay: 2,
             }}
+            className="lg:text-2xl"
           >
             I am a designer & a frontend developer.
           </motion.h2>
