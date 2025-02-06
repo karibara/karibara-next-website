@@ -105,7 +105,7 @@ export const Navbar: React.FC = () => {
 
             <AnimatedHamburgerButton
               onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
-              className="mt-2"
+              className="mt-2 lg:hidden"
             />
           </div>
         </div>
