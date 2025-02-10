@@ -18,7 +18,10 @@ export default {
         wineKari: "hsl(10, 29%, 44%)",
         roseKari: "hsl(11, 66%, 63%)",
         peachKari: "hsl(29, 98%, 83%)",
-        mintKari: "hsl(140, 10%, 46%)",
+        mintKari: {
+          DEFAULT: "hsl(140, 10%, 46%)",
+          light: "hsl(117, 16%, 76%)",
+        },
         magentaKari: "hsl(350, 66%, 63%)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
