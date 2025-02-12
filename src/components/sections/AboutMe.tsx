@@ -10,16 +10,25 @@ export const AboutMe: React.FC = () => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <GlassCard className="grid lg:grid-cols-3 gap-2 max-w-3xl">
-      <div className="w-28 lg:w-full">
+    <GlassCard className="md:grid md:grid-cols-3 gap-2 max-w-3xl ">
+      <div className="hidden md:block pt-10 pl-10">
         <Image
-          src="/profilePhoto.png"
+          src="/profile-photo-circle.png"
           width="200"
           height="200"
           alt="profile photo"
         />
       </div>
-      <div className="col-span-2">
+      <div className="w-full col-span-full relative aspect-[16/9] overflow-hidden rounded-t-3xl md:hidden">
+        <Image
+          src="/profile-photo-horizontal.jpg"
+          layout="fill"
+          objectFit="contain"
+          alt="profile photo"
+          className="rounded-t-3xl"
+        />
+      </div>
+      <div className="col-span-2 px-6 py-4 md:px-10 md:pt-10">
         <h3 className="text-lg lg:text-xl font-bold">About me</h3>
         <div className="my-3 text-sm lg:text-base">
           <p>
@@ -31,12 +40,15 @@ export const AboutMe: React.FC = () => {
             really matter.
           </p>
           {!expanded && (
-            <Button onClick={() => setExpanded(!expanded)} className="mt-3">
+            <Button
+              onClick={() => setExpanded(!expanded)}
+              className="mt-6 w-full md:w-auto"
+            >
               more about me
             </Button>
           )}
 
-          {/* EXPANDED */}
+          {/* EXPANDED TEXT about me*/}
           <AnimatePresence>
             {expanded && (
               <motion.div
