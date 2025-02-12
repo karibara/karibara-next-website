@@ -10,9 +10,8 @@ export default function Home() {
         <WelcomeSection />
 
         {/* ABOUT ME */}
-        <div>
-          <AboutMe />
-        </div>
+
+        <AboutMe />
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
