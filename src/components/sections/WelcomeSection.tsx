@@ -31,7 +31,7 @@ export const WelcomeSection: React.FC = () => {
         }}
         className="lg:text-2xl"
       >
-        Nice to meet you.
+        Frontend Developer & Designer.
       </motion.h2>
       <motion.h2
         initial={{ x: -300, opacity: 0, filter: "blur(15px)" }}
@@ -45,7 +45,7 @@ export const WelcomeSection: React.FC = () => {
         }}
         className="lg:text-2xl"
       >
-        I am a designer & a frontend developer.
+        Nice to meet you.
       </motion.h2>
     </div>
   );
