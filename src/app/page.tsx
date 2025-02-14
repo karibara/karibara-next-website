@@ -1,4 +1,5 @@
 import { AboutMe } from "@/components/sections/AboutMe";
+import { SocialMediaLinks } from "@/components/sections/SocialMediaLinks";
 import { WelcomeSection } from "@/components/sections/WelcomeSection";
 // import Image from "next/image";
 
@@ -12,6 +13,9 @@ export default function Home() {
         {/* ABOUT ME */}
 
         <AboutMe />
+
+        {/* SOCIAL MEDIA LINKS */}
+        <SocialMediaLinks />
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
