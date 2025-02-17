@@ -1,11 +1,14 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 
-const DURATION = 0.25;
-const STAGGER = 0.025;
+const DURATION = 0.3;
+const STAGGER = 0.04;
 
 type FlipLinkProps = {
   href: string;
+  children: string;
 };
 
 const FlipLink: React.FC<React.PropsWithChildren<FlipLinkProps>> = ({
@@ -19,67 +22,66 @@ const FlipLink: React.FC<React.PropsWithChildren<FlipLinkProps>> = ({
       href={href}
       className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
       style={{
-        lineHeight: 0.75,
+        lineHeight: 0.85,
       }}
     >
-      {typeof children === "string" ? (
-        <div>
-          {children.split("").map((l, i) => (
-            <motion.span
-              variants={{
-                initial: { y: 0 },
-                hovered: { y: "-100%" },
-              }}
-              transition={{
-                duration: DURATION,
-                ease: "easeInOut",
-                delay: STAGGER * i,
-              }}
-              className="inline-block"
-              key={i}
-            >
-              {l}
-            </motion.span>
-          ))}
-        </div>
-      ) : null}
+      <div>
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: { y: 0 },
+              hovered: { y: "-100%" },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
 
-      {typeof children === "string" ? (
-        <div className="absolute inset-0">
-          {children.split("").map((l, i) => (
-            <motion.span
-              variants={{
-                initial: {
-                  y: "100%",
-                },
-                hovered: {
-                  y: 0,
-                },
-              }}
-              transition={{
-                duration: DURATION,
-                ease: "easeInOut",
-                delay: STAGGER * i,
-              }}
-              className="inline-block"
-              key={i}
-            >
-              {l}
-            </motion.span>
-          ))}
-        </div>
-      ) : null}
+      <div className="absolute inset-0">
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: {
+                y: "100%",
+              },
+              hovered: {
+                y: 0,
+              },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
     </motion.a>
   );
 };
 
 export const SocialMediaLinks: React.FC = () => {
   return (
-    <section className="grid place-content-center gap-2 bg-green-300 px-8 py-24 text-black">
-      <FlipLink href="#">Twitter</FlipLink>
-      <FlipLink href="#">Linkedin</FlipLink>
-      <FlipLink href="#">Facebook</FlipLink>
-      <FlipLink href="#">Instagram</FlipLink>
+    <section className="grid place-content-center gap-2 text-roseKari-light font-poppins">
+      <FlipLink href="https://www.linkedin.com/in/malgorzatabozykowska/">
+        Linkedin
+      </FlipLink>
+      <FlipLink href="https://github.com/karibara">GitHub</FlipLink>
+      <FlipLink href="https://www.behance.net/malgorzatabozykowska">
+        Behance
+      </FlipLink>
     </section>
   );
 };

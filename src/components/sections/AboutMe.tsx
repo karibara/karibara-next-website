@@ -21,7 +21,7 @@ export const AboutMe: React.FC = () => {
         delay: 2,
       }}
     >
-      <GlassCard className="md:grid md:grid-cols-3 gap-2 max-w-3xl ">
+      <GlassCard className="md:grid md:grid-cols-3 gap-2 max-w-[698px] ">
         <div className="hidden md:block pt-10 pl-10">
           <Image
             src="/profile-photo-circle.png"
@@ -34,9 +34,8 @@ export const AboutMe: React.FC = () => {
           <Image
             src="/profile-photo-horizontal.jpg"
             layout="fill"
-            objectFit="contain"
             alt="profile photo"
-            className="rounded-t-3xl"
+            className="rounded-t-3xl object-contain"
           />
         </div>
         <div className="col-span-2 px-6 py-4 md:px-10 md:pt-10">
