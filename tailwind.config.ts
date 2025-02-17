@@ -13,10 +13,17 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        comfortaa: ["Comfortaa", "sans-serif"], // Ustawienie Comfortaa jako głównej czcionki
+        poppins: ["Poppins", "sans-serif"], // Poppins jako opcjonalna czcionka
+      },
       colors: {
         yellowKari: "hsl(43, 100%, 84%)",
         wineKari: "hsl(10, 29%, 44%)",
-        roseKari: "hsl(11, 66%, 63%)",
+        roseKari: {
+          DEFAULT: "hsl(11, 66%, 63%)",
+          light: "hsl(21, 66%, 70%)",
+        },
         peachKari: "hsl(29, 98%, 83%)",
         mintKari: {
           DEFAULT: "hsl(140, 10%, 46%)",
