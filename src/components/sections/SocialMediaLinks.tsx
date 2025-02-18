@@ -2,6 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Fredoka } from "next/font/google";
+
+const fredoka = Fredoka({
+  variable: "--font-fredoka-sans",
+  subsets: ["latin"],
+});
 
 const DURATION = 0.3;
 const STAGGER = 0.04;
@@ -20,9 +26,9 @@ const FlipLink: React.FC<React.PropsWithChildren<FlipLinkProps>> = ({
       initial="initial"
       whileHover="hovered"
       href={href}
-      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
+      className={`${fredoka.variable} relative block overflow-hidden whitespace-nowrap  font-bold font-fredoka uppercase   text-7xl sm:text-8xl lg:text-9xl`}
       style={{
-        lineHeight: 0.85,
+        lineHeight: 0.75,
       }}
     >
       <div>
@@ -74,7 +80,7 @@ const FlipLink: React.FC<React.PropsWithChildren<FlipLinkProps>> = ({
 
 export const SocialMediaLinks: React.FC = () => {
   return (
-    <section className="grid place-content-center gap-2 text-roseKari-light font-poppins">
+    <section className="grid place-content-center gap-2 text-roseKari-light font-fredoka px-6 md:px-10">
       <FlipLink href="https://www.linkedin.com/in/malgorzatabozykowska/">
         Linkedin
       </FlipLink>

@@ -21,7 +21,7 @@ export const AboutMe: React.FC = () => {
         delay: 2,
       }}
     >
-      <GlassCard className="md:grid md:grid-cols-3 gap-2 max-w-[698px] ">
+      <GlassCard className="md:grid md:grid-cols-3 gap-2 max-w-[698px] z-10">
         <div className="hidden md:block pt-10 pl-10">
           <Image
             src="/profile-photo-circle.png"
