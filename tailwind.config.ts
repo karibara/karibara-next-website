@@ -14,8 +14,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        comfortaa: ["Comfortaa", "sans-serif"], // Ustawienie Comfortaa jako głównej czcionki
-        poppins: ["Poppins", "sans-serif"], // Poppins jako opcjonalna czcionka
+        comfortaa: ["Comfortaa", "sans-serif"],
+        fredoka: ["Fredoka", "sans-serif"],
       },
       colors: {
         yellowKari: "hsl(43, 100%, 84%)",
