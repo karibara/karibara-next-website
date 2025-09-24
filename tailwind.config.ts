@@ -18,6 +18,12 @@ export default {
         fredoka: ["Fredoka", "sans-serif"],
       },
       colors: {
+        blackKari: "#1C130E",
+        orangeKari: "#EE7C3F",
+        greyKari: {
+          DEFAULT: "#50413A",
+          light: "#F4F2F1",
+        },
         yellowKari: "hsl(43, 100%, 84%)",
         wineKari: "hsl(10, 29%, 44%)",
         roseKari: {
