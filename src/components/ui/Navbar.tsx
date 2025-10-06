@@ -84,7 +84,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <div className="grid lg:place-items-center bg-peachKari fixed top-0 w-dvw z-50 drop-shadow- ">
+      <div className="grid lg:place-items-center bg-orangeKari/15 fixed top-0 w-dvw z-50 drop-shadow- ">
         <div className="flex  py=5 px-5 lg:px-0 justify-between lg:w-[1140px] z-50">
           <Link href="#" className="p-2 ">
             <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.85 }}>

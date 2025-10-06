@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${comfortaa.variable}  antialiased font-[family-name:var(--font-comfortaa-sans)] bg-yellowKari text-wineKari`}
+        className={`${comfortaa.variable}  antialiased font-[family-name:var(--font-comfortaa-sans)] bg-greyKari-light text-greyKari`}
       >
         <header>
           <Navbar />
