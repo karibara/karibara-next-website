@@ -6,86 +6,28 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedHamburgerButton } from "./AnimatedHamburgerButton";
 
-type NavlinkProps = {
-  href: string;
-  className?: string;
-};
-
-type MobileMenuProps = {
-  isOpen: boolean;
-  onClose: VoidFunction;
-  className?: string;
-};
-
-const Navlink: React.FC<React.PropsWithChildren<NavlinkProps>> = ({
-  href,
-  children,
-}) => (
-  <Link
-    href={href}
-    className="font-semibold text-base hover:text-mintKari  hover:translate-y-px"
-  >
-    {children}
-  </Link>
-);
-
 const links = [
   {
-    label: "ABOUT",
+    label: "CONTACT ME",
     href: "#",
   },
   {
-    label: "SKILLS",
+    label: "MY FRONTEND DEV CV",
     href: "#",
   },
   {
-    label: "PROJECTS",
-    href: "#",
-  },
-  {
-    label: "FAQ",
+    label: "LINKEDIN",
     href: "#",
   },
 ];
-
-const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) {
-    return null;
-  }
-
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.nav
-          initial={{ y: -850 }}
-          animate={{ y: 0 }}
-          exit={{ y: -850 }}
-          transition={{ duration: 3, type: "spring" }}
-          className="flex w-full flex-col place-content-center gap-4 backdrop-blur-md bg-peachKari/20 lg:hidden fixed h-3/4 rounded-b-xl border-black z-40"
-        >
-          {links.map((link) => (
-            <Link
-              onClick={onClose}
-              className="flex place-content-center py-2"
-              href={link.href}
-              key={link.label}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </motion.nav>
-      )}
-    </AnimatePresence>
-  );
-};
 
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
-      <div className="grid lg:place-items-center bg-orangeKari/15 fixed top-0 w-dvw z-50 drop-shadow- ">
-        <div className="flex  py=5 px-5 lg:px-0 justify-between lg:w-[1140px] z-50">
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[740px] z-50">
+        <div className="flex items-center justify-between py-5 px-5">
           <Link href="#" className="p-2 ">
             <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.85 }}>
               <Image
@@ -96,23 +38,72 @@ export const Navbar: React.FC = () => {
               ></Image>
             </motion.div>
           </Link>
-          <div>
-            <nav className="lg:flex gap-8 items-end mt-4 hidden">
-              {links.map((link) => (
-                <Navlink href={link.href} key={link.label}>
-                  {link.label}
-                </Navlink>
-              ))}
-            </nav>
 
-            <AnimatedHamburgerButton
-              onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
-              className="mt-2 lg:hidden"
-            />
-          </div>
+          <AnimatedHamburgerButton
+            onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+            className="mt-4"
+          />
         </div>
       </div>
-      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+
+      {/* menu with animated background */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            key="menu"
+            className="fixed inset-0 z-40 flex items-center justify-center backdrop-blur-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Big circle from hamburger menu background */}
+            <motion.div
+              className="absolute bg-orangeKari rounded-full"
+              initial={{ scale: 0, opacity: 1 }}
+              animate={{ scale: 160, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              transition={{
+                duration: 2,
+                ease: [0.76, 0, 0.24, 1],
+              }}
+              style={{
+                width: "3rem",
+                height: "3rem",
+                top: "2.2rem",
+                right: "1.8rem",
+                transformOrigin: "center",
+              }}
+            />
+
+            {/* Links after a while */}
+            <motion.nav
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="relative z-50 flex flex-col items-center gap-6 text-2xl font-semibold text-kariBlack"
+            >
+              {links.map((link, i) => (
+                <motion.div
+                  key={link.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 + i * 0.1 }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="hover:scale-110 transition-transform"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
