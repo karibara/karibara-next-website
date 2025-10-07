@@ -1,0 +1,23 @@
+                    SKILLS SECTION
+
+                    <p className="py-6">
+                      My components are so well thought out they could have
+                      their own résumés. If a problem pops up, I’ll find a
+                      solution faster than Ctrl+F. And when I don’t know
+                      something, I’m not afraid to ask — good communication is
+                      key.
+                    </p>
+
+                    //tu "me in numbers"
+                    <p>
+                      Away from the screen? You’ll probably find me sketching,
+                      woodworking, running miles, drinking tea, or indulging in
+                      way too much pasta.
+                    </p>
+
+
+                    CONTACT SECTION
+                    <p className="py-6">
+                      Always ready for new challenges—whether in code or
+                      creative projects!
+                    </p>
