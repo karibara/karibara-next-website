@@ -49,6 +49,8 @@ export const AnimatedHamburgerButton: React.FC<
     onClick();
   };
 
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <MotionConfig
       transition={{
@@ -60,21 +62,40 @@ export const AnimatedHamburgerButton: React.FC<
         initial={false}
         animate={isOpen ? "open" : "closed"}
         onClick={handleClick}
-        className={`relative h-10 w-10 flex flex-col justify-between items-center ${className}`}
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        className={`relative h-12 w-12 flex items-center justify-center ${className}`}
       >
+        {/* circle background */}
+        <motion.div
+          className="absolute rounded-full bg-orangeKari"
+          initial={{ scale: 0.8, opacity: 1 }}
+          animate={{
+            scale: isHovered ? 1.3 : 1,
+            opacity: isOpen ? 1 : 0.8,
+          }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            zIndex: 0,
+          }}
+        />
+
+        {/* hamburger lines */}
         <motion.span
           variants={VARIANTS.top}
-          className="absolute h-1 w-6 bg-wineKari"
+          className="absolute h-1 w-6 bg-blackKari"
           style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
         />
         <motion.span
           variants={VARIANTS.middle}
-          className="absolute h-1 w-6 bg-wineKari"
+          className="absolute h-1 w-6 bg-blackKari"
           style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
         />
         <motion.span
           variants={VARIANTS.bottom}
-          className="absolute h-1 w-4 bg-wineKari"
+          className="absolute h-1 w-4 bg-blackKari"
           style={{
             x: "-90%",
             y: "50%",
