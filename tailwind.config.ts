@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         comfortaa: ["Comfortaa", "sans-serif"],
         fredoka: ["Fredoka", "sans-serif"],
+        Oswald: ["Oswald", "sans-serif"],
       },
       colors: {
         blackKari: "#1C130E",

@@ -13,6 +13,9 @@ export default function Home() {
         {/* ABOUT ME */}
 
         <AboutMe />
+        <AboutMe />
+        <AboutMe />
+        <AboutMe />
 
         {/* SOCIAL MEDIA LINKS */}
         <SocialMediaLinks />

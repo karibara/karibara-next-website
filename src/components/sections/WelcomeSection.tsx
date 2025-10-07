@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 
 export const WelcomeSection: React.FC = () => {
   return (
-    <div className="flex gap-1  flex-col text-mintKari px-6 md:px-10">
+    <div className="flex gap-1  flex-col text-blackKari px-6 md:px-10">
       <motion.h1
         initial={{ x: -500, opacity: 0, filter: "blur(15px)" }}
-        animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        // animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "spring",
           stiffness: 80, // kontroluje "sztywność" sprężyny
@@ -21,7 +22,8 @@ export const WelcomeSection: React.FC = () => {
 
       <motion.h2
         initial={{ x: -300, opacity: 0, filter: "blur(15px)" }}
-        animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        // animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "spring",
           stiffness: 80,
@@ -35,7 +37,8 @@ export const WelcomeSection: React.FC = () => {
       </motion.h2>
       <motion.h2
         initial={{ x: -300, opacity: 0, filter: "blur(15px)" }}
-        animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        // animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "spring",
           stiffness: 80,
