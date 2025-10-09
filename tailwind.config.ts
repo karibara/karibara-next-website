@@ -25,6 +25,10 @@ export default {
           DEFAULT: "#50413A",
           light: "#F4F2F1",
         },
+        blueKari: {
+          DEFAULT: "#1787A6",
+          light: "#2EB1D7",
+        },
         yellowKari: "hsl(43, 100%, 84%)",
         wineKari: "hsl(10, 29%, 44%)",
         roseKari: {
