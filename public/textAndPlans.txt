@@ -1,5 +1,13 @@
                     SKILLS SECTION
 
+
+                    <p className="py-6">
+                        I&apos;m still new to the world of programming, but I
+                        catch up quickly — and my background in design has
+                        taught me that logic, aesthetics, and good structure
+                        (not just in code!) are what really matter.
+                      </p>
+                      
                     <p className="py-6">
                       My components are so well thought out they could have
                       their own résumés. If a problem pops up, I’ll find a
