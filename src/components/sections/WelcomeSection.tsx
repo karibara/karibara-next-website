@@ -1,6 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Oswald } from "next/font/google";
+
+const oswald = Oswald({
+  variable: "--font-oswald-sans",
+  subsets: ["latin"],
+});
 
 export const WelcomeSection: React.FC = () => {
   return (
@@ -8,14 +14,13 @@ export const WelcomeSection: React.FC = () => {
       <motion.h1
         initial={{ x: -500, opacity: 0, filter: "blur(15px)" }}
         whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
-        // animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "spring",
           stiffness: 80, // kontroluje "sztywność" sprężyny
           damping: 60, // kontroluje "dochamowanie" pod koniec
           duration: 6, // opcjonalnie, dla większej kontroli
         }}
-        className="text-3xl lg:text-5xl font-bold pb-4 "
+        className={`${oswald.variable} text-3xl lg:text-5xl  pb-4 font-Oswald border-b-4 border-blueKari text-blueKari`}
       >
         Hi, I&apos;m Małgorzata.
       </motion.h1>
@@ -23,7 +28,6 @@ export const WelcomeSection: React.FC = () => {
       <motion.h2
         initial={{ x: -300, opacity: 0, filter: "blur(15px)" }}
         whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
-        // animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "spring",
           stiffness: 80,
@@ -31,7 +35,7 @@ export const WelcomeSection: React.FC = () => {
           duration: 8,
           delay: 1,
         }}
-        className="lg:text-2xl"
+        className="lg:text-2xl mt-6"
       >
         Frontend Developer & Designer.
       </motion.h2>
