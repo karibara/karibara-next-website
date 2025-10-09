@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <div className=" grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-comfortaa-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-start relative">
+        {/* HASH PATTERN */}
         <Image
           src="/hash-pattern.svg"
           alt="hash pattern"
@@ -14,6 +15,16 @@ export default function Home() {
           height={360}
           className="absolute top-20 -right-16 -z-10 "
         />
+
+        {/* WAVE PATTERN */}
+        <Image
+          src="/waves.svg"
+          alt="waves pattern"
+          width={156}
+          height={58}
+          className="absolute top-[8rem] lg:top-[11em] scale-75 lg:scale-100 -left-14 -z-10 "
+        />
+
         {/* WELCOME SECTION */}
         <WelcomeSection />
 
