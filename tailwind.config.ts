@@ -87,6 +87,23 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      // animation to make infinite horizontal text
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        marqueeReverse: {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 15s linear infinite",
+        marquee2: "marquee 15s linear infinite 7.5s",
+        marqueeReverse: "marqueeReverse 15s linear infinite",
+        marqueeReverse2: "marqueeReverse 15s linear infinite 7.5s",
+      },
     },
   },
   plugins: [tailwindcssAnimate, tailwindcssMotion],
