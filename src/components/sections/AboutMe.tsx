@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export const AboutMe: React.FC = () => {
   return (
     <motion.div
-      initial={{ scale: 0.8, opacity: 0, filter: "blur(15px)" }}
+      initial={{ scale: 1, opacity: 1, filter: "blur(15px)" }}
       whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
       transition={{
         type: "spring",
@@ -17,7 +17,7 @@ export const AboutMe: React.FC = () => {
         delay: 4,
       }}
     >
-      <div className="relative perspective-[1200px] max-w-[654px] mx-auto">
+      <div className="relative max-w-[654px] mx-auto">
         <div className=" flex flex-col md:flex-row items-stretch  overflow-hidden">
           {/* text */}
           <div className="w-full md:w-2/3 px-6 py-4 md:px-10 md:pt-10 flex flex-col justify-center">

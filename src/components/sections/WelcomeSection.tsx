@@ -10,9 +10,9 @@ const oswald = Oswald({
 
 export const WelcomeSection: React.FC = () => {
   return (
-    <div className="flex gap-1  flex-col text-blackKari px-6 md:px-10">
+    <div className=" text-blackKari w-full max-w-[654px] p-6 md:p-10">
       <motion.h1
-        initial={{ x: -500, opacity: 0, filter: "blur(15px)" }}
+        initial={{ x: -10, opacity: 0, filter: "blur(15px)" }}
         whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "spring",
@@ -26,7 +26,7 @@ export const WelcomeSection: React.FC = () => {
       </motion.h1>
 
       <motion.h2
-        initial={{ x: -300, opacity: 0, filter: "blur(15px)" }}
+        initial={{ x: -20, opacity: 0, filter: "blur(15px)" }}
         whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "spring",
@@ -40,9 +40,9 @@ export const WelcomeSection: React.FC = () => {
         Frontend Developer & Designer.
       </motion.h2>
       <motion.h2
-        initial={{ x: -300, opacity: 0, filter: "blur(15px)" }}
+        initial={{ x: -30, opacity: 0, filter: "blur(15px)" }}
         whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
-        // animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "spring",
           stiffness: 80,
