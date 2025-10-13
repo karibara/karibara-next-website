@@ -1,8 +1,8 @@
 import { AboutMe } from "@/components/sections/AboutMe";
+import { Skills } from "@/components/sections/Skills";
 import { SocialMediaLinks } from "@/components/sections/SocialMediaLinks";
 import { WelcomeSection } from "@/components/sections/WelcomeSection";
-// import { InfiniteHorizontalText } from "@/components/ui/InfiniteHorizontalText";
-// import Image from "next/image";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -32,11 +32,21 @@ export default function Home() {
         {/* ABOUT ME */}
 
         <AboutMe />
-
-        {/* <InfiniteHorizontalText text="Skills" className="-mx-8 sm:-mx-20" /> */}
+        {/* SKILLS */}
+        <Skills />
 
         {/* SOCIAL MEDIA LINKS */}
-        <SocialMediaLinks />
+        <div className="bg-white/20 py-20 my-10 relative">
+          {/* hash pattern */}
+          <Image
+            src="/hash-pattern.svg"
+            alt="hash pattern"
+            width={360}
+            height={360}
+            className="absolute top-0 -left-20 -z-10 rotate-90"
+          />
+          <SocialMediaLinks />
+        </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
