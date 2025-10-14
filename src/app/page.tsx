@@ -1,4 +1,5 @@
 import { AboutMe } from "@/components/sections/AboutMe";
+import { Contact } from "@/components/sections/Contact";
 import { Skills } from "@/components/sections/Skills";
 import { SocialMediaLinks } from "@/components/sections/SocialMediaLinks";
 import { WelcomeSection } from "@/components/sections/WelcomeSection";
@@ -27,17 +28,17 @@ export default function Home() {
             className="absolute top-[10rem] lg:top-[13rem] scale-75 lg:scale-100 -left-14 -z-10 "
           />
 
-          {/* WELCOME SECTION */}
+          {/* WELCOME - SECTION */}
           <WelcomeSection />
 
-          {/* ABOUT ME */}
+          {/* ABOUT ME - SECTION*/}
 
           <AboutMe />
         </div>
-        {/* SKILLS */}
+        {/* SKILLS - SECTION*/}
         <Skills />
 
-        {/* SOCIAL MEDIA LINKS */}
+        {/* SOCIAL MEDIA LINKS  - SECTION*/}
         <div className=" py-20 my-10 relative">
           {/* hash pattern */}
           <Image
@@ -57,6 +58,9 @@ export default function Home() {
             className="absolute -bottom-[140px] -right-[30%] -z-10 "
           />
         </div>
+
+        {/* CONTACT - SECTION */}
+        <Contact />
       </div>
     </div>
   );
