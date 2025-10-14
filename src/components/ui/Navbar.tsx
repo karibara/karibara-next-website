@@ -17,7 +17,7 @@ const links = [
   },
   {
     label: "LINKEDIN",
-    href: "#",
+    href: "https://www.linkedin.com/in/malgorzatabozykowska/",
   },
 ];
 
@@ -26,7 +26,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[654px] z-50 bg-grayKari/50 backdrop-blur-md">
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[740px] z-50  rounded-full ">
         <div className="flex items-center justify-between py-2 px-5 lg:py-5 lg:px-10">
           <Link href="#" className="p-2 ">
             <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.85 }}>

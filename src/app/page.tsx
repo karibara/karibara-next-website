@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="  pt-20 font-[family-name:var(--font-comfortaa-sans)]">
-      <main className="flex flex-col gap-16 items-center">
+      <div className="flex flex-col gap-16 items-center">
         <div className="relative w-full max-w-[654px] grid place-items-center gap-10 ">
           {/* HASH PATTERN */}
           <Image
@@ -57,8 +57,7 @@ export default function Home() {
             className="absolute -bottom-[140px] -right-[30%] -z-10 "
           />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
+      </div>
     </div>
   );
 }

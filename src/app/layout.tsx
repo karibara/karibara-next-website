@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Comfortaa } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
+import { Footer } from "@/components/ui/Footer";
 
 const comfortaa = Comfortaa({
   variable: "--font-comfortaa-sans",
@@ -26,7 +27,8 @@ export default function RootLayout({
         <header>
           <Navbar />
         </header>
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
