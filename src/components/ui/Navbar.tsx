@@ -9,7 +9,7 @@ import { AnimatedHamburgerButton } from "./AnimatedHamburgerButton";
 const links = [
   {
     label: "CONTACT ME",
-    href: "#",
+    href: "#contact",
   },
   {
     label: "MY FRONTEND DEV CV",
