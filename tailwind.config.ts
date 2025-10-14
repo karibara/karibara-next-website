@@ -20,7 +20,11 @@ export default {
       },
       colors: {
         blackKari: "#1C130E",
-        orangeKari: "#EE7C3F",
+        orangeKari: {
+          DEFAULT: "#EE7C3F",
+          dark: "#BC6C41",
+        },
+
         greyKari: {
           DEFAULT: "#50413A",
           light: "#F4F2F1",

@@ -10,7 +10,7 @@ const oswald = Oswald({
 
 export const WelcomeSection: React.FC = () => {
   return (
-    <div className=" text-blackKari w-full max-w-[654px] p-6 md:p-10">
+    <div className=" text-blackKari w-full max-w-[654px] p-6 md:p-10 bg-white/80">
       <motion.h1
         initial={{ x: -10, opacity: 0, filter: "blur(15px)" }}
         whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
