@@ -10,10 +10,10 @@ const oswald = Oswald({
 
 export const WelcomeSection: React.FC = () => {
   return (
-    <div className=" text-blackKari w-full max-w-[654px] p-6 md:p-10 bg-white/80">
+    <div className=" text-blackKari w-full max-w-[654px] p-6 md:p-10">
       <motion.h1
         initial={{ x: -10, opacity: 0, filter: "blur(15px)" }}
-        whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "spring",
           stiffness: 80, // kontroluje "sztywność" sprężyny
@@ -27,7 +27,7 @@ export const WelcomeSection: React.FC = () => {
 
       <motion.h2
         initial={{ x: -20, opacity: 0, filter: "blur(15px)" }}
-        whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "spring",
           stiffness: 80,
@@ -41,7 +41,7 @@ export const WelcomeSection: React.FC = () => {
       </motion.h2>
       <motion.h2
         initial={{ x: -30, opacity: 0, filter: "blur(15px)" }}
-        whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        // whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "spring",
