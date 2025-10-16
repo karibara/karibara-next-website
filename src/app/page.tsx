@@ -8,8 +8,8 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="  pt-20 font-[family-name:var(--font-comfortaa-sans)]">
-      <div className="flex flex-col gap-16 items-center">
-        <div className="relative w-full max-w-[654px] grid place-items-center gap-10 ">
+      <div className="flex flex-col md:gap-16 items-center">
+        <div className="relative w-full max-w-[654px] grid place-items-center gap-10 overflow-x-hidden md:overflow-visible">
           {/* HASH PATTERN */}
           <Image
             src="/hash-pattern.svg"
