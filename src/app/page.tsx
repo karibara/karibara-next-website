@@ -39,7 +39,7 @@ export default function Home() {
         <Skills />
 
         {/* SOCIAL MEDIA LINKS  - SECTION*/}
-        <div className=" py-20 my-10 relative">
+        <div className="py-20 mt-10 relative">
           {/* hash pattern */}
           <Image
             src="/hash-pattern.svg"
@@ -55,7 +55,7 @@ export default function Home() {
             alt="mirror image"
             width={766}
             height={373}
-            className="absolute -bottom-[140px] -right-[30%] -z-10 "
+            className="absolute -bottom-16 md:-bottom-[140px] -right-14  lg:-right-[30%] -z-10 "
           />
         </div>
 
