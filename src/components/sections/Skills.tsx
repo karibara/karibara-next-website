@@ -1,6 +1,6 @@
-// import { InfiniteHorizontalText } from "../ui/InfiniteHorizontalText";
 import Image from "next/image";
 import { Oswald } from "next/font/google";
+import { InfiniteHorizontalText } from "../ui/InfiniteHorizontalText";
 
 const oswald = Oswald({
   variable: "--font-oswald-sans",
@@ -10,12 +10,7 @@ const oswald = Oswald({
 export const Skills: React.FC = () => {
   return (
     <div className="w-full bg-orangeKari-dark/25 backdrop-blur-md">
-      <div className="w-full bg-orangeKari">
-        <h2 className="text-white text-center text-3xl p-2 font-bold">
-          Skills
-        </h2>
-        {/* <InfiniteHorizontalText text="Skills"/> */}
-      </div>
+      <InfiniteHorizontalText text="Skills" />
 
       {/* WORK SKILLS */}
       <div className="grid md:grid-cols-5 max-w-[654px] my-10 mx-auto gap-4 px-6 md:px-0">
