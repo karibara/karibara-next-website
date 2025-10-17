@@ -32,6 +32,7 @@ export default {
         blueKari: {
           DEFAULT: "#1787A6",
           light: "#2EB1D7",
+          dark: "#0D667E",
         },
         yellowKari: "hsl(43, 100%, 84%)",
         wineKari: "hsl(10, 29%, 44%)",
