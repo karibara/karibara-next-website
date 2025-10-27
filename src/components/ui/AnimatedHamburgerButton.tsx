@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { MotionConfig, motion } from "framer-motion";
 
 type AnimatedHamburgerButtonProps = {
-  onClick: VoidFunction;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   className?: string;
 };
 
@@ -41,14 +42,7 @@ const VARIANTS = {
 
 export const AnimatedHamburgerButton: React.FC<
   AnimatedHamburgerButtonProps
-> = ({ onClick, className }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen((prev) => !prev);
-    onClick();
-  };
-
+> = ({ isOpen, setIsOpen, className }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -61,7 +55,7 @@ export const AnimatedHamburgerButton: React.FC<
       <motion.button
         initial={false}
         animate={isOpen ? "open" : "closed"}
-        onClick={handleClick}
+        onClick={() => setIsOpen((prev) => !prev)}
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
         className={`relative h-12 w-12 flex items-center justify-center ${className}`}
@@ -82,7 +76,7 @@ export const AnimatedHamburgerButton: React.FC<
           }}
         />
 
-        {/* hamburger lines */}
+        {/* lines */}
         <motion.span
           variants={VARIANTS.top}
           className="absolute h-1 w-6 bg-blackKari"

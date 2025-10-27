@@ -46,7 +46,8 @@ export const Navbar: React.FC = () => {
           </Link>
 
           <AnimatedHamburgerButton
-            onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+            isOpen={isMenuOpen}
+            setIsOpen={setIsMenuOpen}
           />
         </div>
       </div>
