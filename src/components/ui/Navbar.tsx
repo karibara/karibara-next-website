@@ -24,6 +24,11 @@ const links = [
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // scroll to top
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[740px] z-50  rounded-full ">
@@ -35,6 +40,7 @@ export const Navbar: React.FC = () => {
                 width="36"
                 height="36"
                 alt="logo karibara"
+                onClick={handleScrollToTop}
               ></Image>
             </motion.div>
           </Link>
