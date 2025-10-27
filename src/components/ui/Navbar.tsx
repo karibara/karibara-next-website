@@ -13,7 +13,7 @@ const links = [
   },
   {
     label: "MY FRONTEND DEV CV",
-    href: "#",
+    href: "/check_this_cv.pdf",
   },
   {
     label: "LINKEDIN",
@@ -31,14 +31,14 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[740px] z-50  rounded-full ">
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[740px] z-50   bg-white/40 md:bg-white/0 backdrop-blur-md md:backdrop-blur-none drop-shadow-xl md:drop-shadow-none border-b-2 border-white/50 md:border-none">
         <div className="flex items-center justify-between py-2 px-5 lg:py-5 lg:px-10">
           <Link href="#" className="p-2 ">
             <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.85 }}>
               <Image
                 src="/karibara_logo.png"
-                width="36"
-                height="36"
+                width="50"
+                height="50"
                 alt="logo karibara"
                 onClick={handleScrollToTop}
               ></Image>
