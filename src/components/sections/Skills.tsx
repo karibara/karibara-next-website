@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { Oswald } from "next/font/google";
 import { InfiniteHorizontalText } from "../ui/InfiniteHorizontalText";
+import { motion } from "framer-motion";
 
 const oswald = Oswald({
   variable: "--font-oswald-sans",
@@ -9,7 +12,14 @@ const oswald = Oswald({
 
 export const Skills: React.FC = () => {
   return (
-    <div className="w-full bg-orangeKari-dark/25 backdrop-blur-md">
+    <motion.div
+      className="w-full bg-orangeKari-dark/25 backdrop-blur-md"
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.8 }}
+    >
+      {/* <div className="w-full bg-orangeKari-dark/25 backdrop-blur-md"> */}
       <InfiniteHorizontalText text="Skills" />
 
       {/* WORK SKILLS */}
@@ -74,6 +84,7 @@ export const Skills: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+      {/* </div> */}
+    </motion.div>
   );
 };
