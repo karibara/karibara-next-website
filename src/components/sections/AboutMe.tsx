@@ -11,7 +11,7 @@ export const AboutMe: React.FC = () => {
     section?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div className="relative max-w-[654px] mx-auto">
+    <div className="relative max-w-[654px] mx-auto ">
       {/* HASH PATTERN */}
       <motion.div
         initial={{ scale: 1.5, opacity: 0, filter: "blur(15px)" }}
@@ -97,6 +97,47 @@ export const AboutMe: React.FC = () => {
             </Button>
           </div>
         </div>
+      </motion.div>
+
+      {/* ARROWS DOWN desktop*/}
+      <motion.div
+        initial={{ opacity: 0, y: -200, x: 300 }}
+        animate={{ opacity: 1, y: -40 }}
+        transition={{ duration: 3, delay: 6, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <Image
+          src="/arrows_down.svg"
+          alt="arrows down"
+          width={36}
+          height={140}
+          className="hidden md:block absolute  -z-10 "
+        />
+      </motion.div>
+
+      {/* ARROWS DOWN mobile*/}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: [0, 0.9, 0],
+          scale: [0.98, 1, 0.98], // poulse
+        }}
+        transition={{
+          duration: 2,
+          delay: 6,
+          ease: "easeOut",
+          repeat: 6,
+          repeatDelay: 1, // pause between poulse
+        }}
+        viewport={{ once: true }}
+      >
+        <Image
+          src="/arrows_down_mobile.svg"
+          alt="arrows down"
+          width={36}
+          height={86}
+          className="md:hidden bottom-0 left-10 absolute  -z-10 "
+        />
       </motion.div>
     </div>
   );
