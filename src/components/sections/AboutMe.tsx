@@ -23,6 +23,7 @@ export const AboutMe: React.FC = () => {
           duration: 10,
           delay: 3,
         }}
+        viewport={{ once: true }}
       >
         <Image
           src="/hash-pattern.svg"
@@ -44,6 +45,7 @@ export const AboutMe: React.FC = () => {
           duration: 10,
           delay: 2,
         }}
+        viewport={{ once: true }}
       >
         <Image
           src="/waves.svg"
@@ -64,6 +66,7 @@ export const AboutMe: React.FC = () => {
           duration: 8,
           delay: 5,
         }}
+        viewport={{ once: true }}
       >
         <div className=" grid grid-cols-2 items-center relative">
           {/* IMAGE - mobile */}
