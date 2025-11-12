@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
-// @ts-expect-error - tailwindcss-motion has no types
-import * as tailwindcssMotion from "tailwindcss-motion";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -105,9 +103,5 @@ export default {
       },
     },
   },
-  plugins: [
-    tailwindcssAnimate,
-    // @ts-ignore
-    tailwindcssMotion as any,
-  ],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;
